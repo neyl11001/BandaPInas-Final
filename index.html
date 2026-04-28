@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BandaPinas</title>
+
+<style>
+body { margin:0; font-family: 'Poppins', sans-serif; background:#143d59; color: #f4b41a;; }
+section { padding:60px 30px; text-align:center; }
+
+/* NAVBAR */
+header { position:fixed; width:100%; background:rgba(0,0,0,0.6); z-index:1000; }
+.navbar { display:flex; justify-content:space-between; padding:30px 30px; }
+.logo { font-size:65px; font-weight:bold; }
+.logo span { color: #194d70; }
+nav a { margin-left:25px; color:#f4b41a; text-decoration:none; font-size: 25px; }
+nav a:hover { color:red; }
+
+
+.hero-content h1 {
+    font-size: 70px; /* 🔴 CHANGE THIS */
+    font-weight: bold;
+}
+
+/* HERO */
+.hero { height:90vh; position:relative; display:flex; align-items:center; justify-content:center; }
+.hero video { position:absolute; width:100%; height:100%; object-fit:cover; }
+.hero-content { position:relative; z-index:5; }
+.btn { padding:12px 25px; background:red; border:none; color:rgb(241, 241, 241); cursor:pointer; }
+
+/* FEATURED */
+.featured { position:relative; height:80vh; }
+.slide { display:none; height:100%; }
+.slide img { width:100%; height:100%; object-fit:cover; }
+.active { display:block; }
+.arrow { position:absolute; top:50%; font-size:40px; cursor:pointer; }
+.left { left:10px; } .right { right:10px; }
+
+/* GRID FOR BANDS & ARTISTS */
+.grid {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card {
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 🔴 SHADOW */
+
+}
+
+.card img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h2 { font-size:30px; margin:10px 0; }
+.card p { font-size:14px; color:#ccc; }
+
+.socials {
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+    align-items: center;       /* aligns vertically */
+    gap: 15px;                 /* 🔴 EVEN SPACING between icons */
+    margin-top: 10px;
+}
+
+
+.socials img {
+    width:25px;      /* 🔴 controls size */
+    height:25px;     /* 🔴 keep it square */
+    object-fit:contain; /* prevents stretching */
+    margin:5px;
+    
+}
+
+footer { background:black; padding:30px; }
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+<div class="logo">Banda<span>Pinas</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#bands">Bands</a>
+<a href="#artists">Artists</a>
+<a href="#featured">Featured</a>
+<a href="#about">About</a>
+</nav>
+</div>
+</header>
+
+<section id="home" class="hero">
+<video autoplay muted loop>
+<source src="headervid.mp4" type="video/mp4"> <!-- CHANGE VIDEO -->
+</video>
+<div class="hero-content">
+<h1 id="typing"></h1>
+<a href="#bands"><button class="btn">Explore</button></a>
+</div>
+</section>
+
+<section id="featured" class="featured">
+<div class="slide active"><img src="imay.jpg"></div>
+<div class="slide"><img src="bita1.jpg"></div>
+<div class="slide"><img src="DON1.jpg"></div>
+<div class="slide"><img src="banna.jpg"></div>
+<div class="slide"><img src="naiv.jpg"></div>
+<div class="slide"><img src="lions.jpg"></div>
+<div class="slide"><img src="imay.jpg"></div>
+<div class="slide"><img src="ransom.jpg"></div>
+<div class="slide"><img src="waki1.jpg"></div>
+
+
+<div class="arrow left" onclick="prevSlide()">❮</div>
+<div class="arrow right" onclick="nextSlide()">❯</div>
+</section>
+
+<!-- ================= BANDS ================= -->
+<section id="bands">
+<h2>Bands</h2>
+
+<div class="grid">
+
+<!-- 🔴 NOW 18 CARDS TOTAL (12 + 6 MORE ADDED) -->
+
+<!-- CARD 1 -->
+<div class="card">
+<img src="waki2.jpg">
+<h2>Waki & the Winstons</h2>
+<p>Waki & the Winstons are an emerging PH based indie band known for their funky, bluesy, and OPM influence sound, featuring soulful original music and live performance.
+    | Genre: Blues, Soul, Rock</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/wakiandthewinstons" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/wakiandthewinstons/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@wakiandthewinstons" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/34GyDwvDc52zZIT42Y52tK" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+<img src="naiv2.jpg">
+<h2>NaÏV</h2>
+<p>NaÏV  is an emerging OPM band from the Philippines known for their indie pop sound, featuring heartfelt, relatable lyrics and melodies. | Genre:  Indie Pop / OPM</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/naivmusicph" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/naivmusicph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/channel/UC4_3NVcSdSFhgdLeWMjDGCA" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/09UWVORoWNvb4g6A4CBDuF" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+<img src="ofn.jpg">
+<h2>Off To Neverland</h2>
+<p>Off To Neverland! is an emerging genre-fluid OPM boy band from the Philippines, known for their funky, retro indie-pop sound. Under EMI Records Philippines and UMG Philippines, they recently released their single "Boombox" in April 2026. | Genre: Genre-fluid/Funk-fueled OPM.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/offtoneverlandmusic" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/offtoneverlandmusic/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@OFFTONEVERLAND" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/0qRRkcXmQsPEhiPPDGm4Qq" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+<img src="mint.jpg">
+<h2>Mint Magic</h2>
+<p>Mint Magic is a 4-piece soul, R&B, and pop group based in Manila, Philippines. They are known for their smooth, OPM vibe, with popular singles including Sukat, Kanina, Listen, and Dating Ikaw. | Genre: Soul, R&B, and Pop.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/MintMagicPH" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/mintmagicph/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@MintMagicPH" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/4mg2C39tmnIPmNmn5twW9o" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+<img src="banna1.jpg">
+<h2>Banna Harbera</h2>
+<p>Banna Harbera was a Filipino soul and funk quintet known for their mellow, groove-driven indie music. Formed in 2013 by students at the De La Salle-College of Saint Benilde, the band became a staple of the local indie scene before officially disbanding in December 2022 after eight years of activity. | Genre: R&B, soul, and funk-influenced sound.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/BannaHarbera" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/bannaharbera/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@BannaHarberaMusic" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/53EF6PS4UcQwjNrpaE0968" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 6 -->
+<div class="card">
+<img src="laa.jpg">
+<h2>Lions & Acrobats</h2>
+<p>Lions & Acrobats is an independent six-piece alternative rock band from Manila, Philippines. Formed in late 2009, they are recognized for their intricate, atmospheric guitar work and unpredictable vocal melodies.| Genre: Indie Rock, Alternative Rock, Math Rock, and Post-Hardcore.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/lionsandacrobats" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/lionsacrobats/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/channel/UC3swmSgnjqPYE8w8utDj5ZA" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/6fAiiuFTEuWUJscsWGaNaS" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= ARTISTS ================= -->
+<section id="artists">
+<h2>Artists</h2>
+
+<div class="grid">
+
+<!-- 🔴 NOW 18 CARDS TOTAL (12 + 6 MORE ADDED) -->
+
+<!-- CARD 1 -->
+<div class="card">
+<img src="ear(1).jpg">
+<h2>Earl Generao</h2>
+<p>Earl Generao is a Filipino singer-songwriter best known for his soulful blend of folk, pop, and R&B. Originally known for his raw acoustic sound, he has recently transitioned into a new era of his career, exploring deeper R&B and soul influences which he considers his "core inspiration".| Genre: Primarily Independent (Indie) pop/rock, acoustic, and soul, with recent forays into theater music.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/EarlGeneraoMusic" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/earlgenerao/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/channel/UCw1wTWjL_CHHWykq046haLg" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/37gpPWUw01BXkRl4zg8hkk" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+<img src="ian.jpg">
+<h2>Ian Quiruz</h2>
+<p>Ian Quiruz (full name Ian Felix R. Quiruz) is a Filipino singer-songwriter and musician known for his contributions to the OPM (Original Pilipino Music) scene. He is signed under the record label EvoSound. | Genre: Indie-pop, Indie-Folk</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/profile.php?id=61577428299866" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/ianquiruz/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@ianquiruz" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/1ubI85xbtCKFV5YO9SZrIJ" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+<img src="frank(1).jpg">
+<h2>Frank Ely</h2>
+<p>Frank Ely (born Frank Cuyag) is a Filipino singer-songwriter and musician known for his fusion of folk, indie pop, and traditional Filipino kundiman and harana styles. Hailing from Cubao, Quezon City, | Genre: indie pop, folk, and romantic OPM</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/frankelymusicph" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/frank.elyy/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@FrankElyMusic" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/4wKXUX1hMeAmlAVOi7cfG0" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+<img src="shanni(1).jpg">
+<h2>SHANNI</h2>
+<p>SHANNi (born Ashanti Silonga) is a rising Filipina singer-songwriter known for her unique blend of "jukebox soul," '70s-inspired torch ballads, and modern bedroom pop. Based in Marikina, she is recognized for her intimate, observational songwriting and delicate vocal delivery. | Genre: Indie Pop, Bedroom Pop, Filipino City Pop.</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/shantyysilonga" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/shantysilonga/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@SHANNi_" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/46rXMWiYqSYCwidbAAWPTp" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+<img src="earla.jpg">
+<h2>Earl Agustin</h2>
+<p>Earl Agustin is a rising Filipino singer-songwriter who has gained significant popularity for his retro-inspired R&B and soul sound. He is currently signed with Vicor Music and is best known for his chart-topping hit "Tibok", which went viral in 2025 after being featured in the television series Ang Mutya ng Section E. | Genre: R&B, retro soul, and funk-pop</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/musikaniorl" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/musikaniorl/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/channel/UClo9d5_Wuw5SHoozzVUf5hA" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/48veLPCIJh5NVQxhyNRKCm" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+<!-- CARD 6 -->
+<div class="card">
+<img src="joppper.jpg">
+<h2>Jopper Ril</h2>
+<p>Jopper Ril is a Filipino singer-songwriter, musician, and producer known for his modern take on the Manila Sound and classic 70s disco and R&B vibes. He gained significant viral attention in 2020 for his "Smooth Jazz Version" of the viral "Bawal Lumabas" meme. | Genre: R&B, soul, disco, and funk, often</p>
+<div class="socials">
+<!-- 🔴 PUT SOCIAL MEDIA LINKS BELOW -->
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/jopperrilmusic" target="_blank">
+<img src="fb.avif">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/jopperril/" target="_blank">
+<img src="Instagram_icon.png">
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com/@JopperRil" target="_blank">
+<img src="yt.png">
+</a>
+
+<!-- SPOTIFY -->
+<a href="https://open.spotify.com/artist/3gyeV0Xls4UpNJdLU3IHoc" target="_blank">
+<img src="spotu.png">
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<p>OPM is not Dead! Support our own Filipino local bands and artists.</p>
+</section>
+
+<footer>
+<center><a href="#"><img src="fb.avif" width="30"></a></center>
+<center><a href="#"><img src="Instagram_icon.png" width="30"></a></center>
+<center><p>@2026 BandaPInas</p></center>
+</footer>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let index=0;
+function showSlide(i){slides.forEach(s=>s.classList.remove('active'));slides[i].classList.add('active');}
+function nextSlide(){index++;if(index>=slides.length)index=0;showSlide(index);}
+function prevSlide(){index--;if(index<0)index=slides.length-1;showSlide(index);} 
+setInterval(nextSlide,4000);
+
+const text = "Discover your Local Bands and Artists";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 40);
+    }
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
